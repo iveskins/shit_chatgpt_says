@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Garfield Comic Strip Panel</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="garfield-panel" width="500" height="300"></canvas>
+    <script>
+      const canvas = document.getElementById('garfield-panel');
+      const ctx = canvas.getContext('2d');
+      
+      // Draw the background color
+      ctx.fillStyle = '#e0e0e0';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw the grass
+      ctx.fillStyle = '#5da683';
+      ctx.fillRect(0, 200, canvas.width, 100);
+      
+      // Draw the fence
+      ctx.strokeStyle = '#8b572a';
+      ctx.lineWidth = 10;
+      ctx.beginPath();
+      ctx.moveTo(0, 180);
+      ctx.lineTo(canvas.width, 180);
+      ctx.stroke();
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.moveTo(0, 200);
+      ctx.lineTo(canvas.width, 200);
+      ctx.stroke();
+      
+      // Draw Garfield
+      ctx.fillStyle = '#f3ac2b';
+      ctx.fillRect(200, 120, 80, 80);
+      ctx.fillStyle = '#f7d18c';
+      ctx.beginPath();
+      ctx.arc(240, 120, 20, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(200, 120, 20, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.beginPath();
+      ctx.arc(240, 120, 8, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(200, 120, 8, 0, 2 * Math.PI);
+      ctx.fill();
+      ctx.strokeStyle = '#000';
+      ctx.beginPath();
+      ctx.arc(240, 120, 20, 0, 1 * Math.PI);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(200, 120, 20, 0, 1 * Math.PI);
+      ctx.stroke();
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.moveTo(220, 140);
+      ctx.lineTo(260, 140);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(220, 150);
+      ctx.lineTo(260, 150);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(220, 160);
+      ctx.lineTo(260, 160);
+      ctx.stroke();
+      ctx.fillStyle = '#000';
+      ctx.fillRect(220, 170, 40, 10);
+      
+      
+           // Draw the speech bubble
+      ctx.fillStyle = '#fff';
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(100, 60);
+      ctx.lineTo(140, 20);
+      ctx.quadraticCurveTo(160, 0, 200, 0);
+      ctx.lineTo(300, 0);
+      ctx.quadraticCurveTo(340, 0, 360, 20);
+      ctx.lineTo(400, 60);
+      ctx.quadraticCurveTo(400, 100, 360, 120);
+      ctx.lineTo(340, 130);
+      ctx.lineTo(320, 130);
+      ctx.quadraticCurveTo(280, 130, 260, 110);
+      ctx.lineTo(200, 70);
+      ctx.quadraticCurveTo(180, 50, 160, 60);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      
+      // Draw the text in the speech bubble
+      ctx.fillStyle = '#000';
+      ctx.font = 'bold 20px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('I hate Mondays!', 200, 60);
+    </script>
+  </body>
+</html>
